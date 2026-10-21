@@ -3,14 +3,139 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free pandas Data Cleaning Cheat Sheet | Datamous</title>
-<!-- Where the book's free-bonus link goes. To switch email tools, change BOTH urls below. -->
-<meta http-equiv="refresh" content="0; url=https://datamous.substack.com/subscribe">
-<link rel="canonical" href="https://datamous.substack.com/subscribe">
-<style>body{font-family:system-ui,sans-serif;background:#F2EFE8;color:#141414;display:grid;place-items:center;min-height:100vh;margin:0}a{color:#D9481C}</style>
+<title>Get the free pandas Data Cleaning Cheat Sheet | Datamous</title>
+<meta name="description" content="78 tested pandas snippets for everyday data cleaning, in the order you'd use them, on two printable pages. Free by email.">
+<meta property="og:title" content="Free pandas Data Cleaning Cheat Sheet (2-page PDF)">
+<meta property="og:description" content="78 tested pandas snippets: blanks, duplicates, messy text, types, dates, outliers and merges.">
+<meta property="og:image" content="https://datamous.github.io/og.jpg">
+<meta property="og:url" content="https://datamous.github.io/cheatsheet/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://datamous.github.io/cheatsheet/">
+<link rel="icon" href="/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
 </head>
-<body>
-<p>Taking you to the free cheat sheet… <a href="https://datamous.substack.com/subscribe">Click here if nothing happens</a>.</p>
-<script>location.replace("https://datamous.substack.com/subscribe");</script>
+<body class="lp">
+<div class="wrap">
+<header>
+  <a class="brand" href="/"><img src="/logo.png" alt="">DATAMOUS</a>
+  <nav><a href="/#books">Books</a></nav>
+</header>
+
+<main>
+<div class="lp-hero">
+  <div class="lp-copy">
+    <h1>Every pandas cleaning fix, on <span>two pages</span>.</h1>
+    <p class="lead">The free <strong>pandas Data Cleaning Cheat Sheet</strong>: 78 tested snippets for blanks, duplicates, messy text, wrong types, dates, outliers and merges, in the order you'd use them.</p>
+
+    <div class="signup" id="signup">
+      <form class="signup-form" action="https://app.kit.com/forms/10077352/subscriptions" method="post" novalidate>
+        <label for="email">Where should we send it?</label>
+        <div class="signup-row">
+          <input id="email" name="email_address" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required aria-describedby="signup-msg">
+          <button type="submit"><span class="btn-label">Send me the cheat sheet</span><span class="btn-busy" aria-hidden="true"></span></button>
+        </div>
+        <p class="signup-msg" id="signup-msg" role="alert" aria-live="polite"></p>
+        <p class="fine">Free PDF by email. You'll also get short, practical emails about working with data. Unsubscribe in one click. <a href="/privacy/">Privacy</a></p>
+      </form>
+
+      <div class="signup-done" hidden tabindex="-1">
+        <h2>Check your inbox</h2>
+        <ol class="steps">
+          <li>Open the email from <strong>Datamous</strong>: <em>“One click to get your pandas cheat sheet”</em>.</li>
+          <li>Click the orange <strong>Confirm and get the cheat sheet</strong> button.</li>
+          <li>Your download page opens. That's it.</li>
+        </ol>
+        <p class="fine">Nothing after two minutes? Look in Promotions or Spam, or <button type="button" class="linklike" data-retry>try another email</button>.</p>
+      </div>
+    </div>
+
+    <ul class="facts" aria-label="What you get">
+      <li><b>2</b> printable pages</li>
+      <li><b>78</b> tested snippets</li>
+      <li>Tested on the <b>latest pandas</b></li>
+    </ul>
+    <p class="reader">Came from the book? This is the bonus cheat sheet it mentions.</p>
+  </div>
+  <picture class="lp-art">
+    <source media="(max-width:760px)" srcset="mockup-720.webp">
+    <img src="mockup.webp" alt="Both pages of the pandas Data Cleaning Cheat Sheet, fanned out" width="1200" height="1060" fetchpriority="high">
+  </picture>
+</div>
+
+<section>
+  <h2>What's inside</h2>
+  <p class="sub">11 sections. Each line says what it fixes, then gives the pandas code to do it.</p>
+  <div class="inside">
+    <div>
+      <ol class="toc">
+        <li>Load &amp; inspect</li><li>Missing values</li>
+        <li>Duplicates</li><li>Text clean-up</li>
+        <li>Types &amp; conversion</li><li>Dates</li>
+        <li>Filter &amp; outliers</li><li>Rename &amp; reorder</li>
+        <li>Combine tables</li><li>Reshape &amp; summarise</li>
+        <li>Check &amp; save</li>
+      </ol>
+      <p class="brandline">Plus a "pandas habits" box with the mistakes that silently change nothing, and a good order to clean in. Every line is run on the latest pandas before it's published.</p>
+      <a class="cta" href="#signup" data-jump>Send me the cheat sheet</a>
+    </div>
+    <figure class="snip">
+      <img src="/snippet-missing-values.webp" alt="The Missing values section of the cheat sheet, showing pandas code for each fix" width="780" height="665" loading="lazy">
+      <figcaption>A real section, at actual size: Missing values.</figcaption>
+    </figure>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span>© 2026 Datamous</span>
+  <span><a href="/">Home</a> · <a href="https://x.com/datamous">X</a> · <a href="https://www.linkedin.com/company/109472739">LinkedIn</a> · <a href="/privacy/">Privacy</a></span>
+</footer>
+</div>
+
+<script>
+(function () {
+  var box = document.getElementById('signup');
+  var form = box.querySelector('form');
+  var input = form.querySelector('input');
+  var msg = form.querySelector('.signup-msg');
+  var done = box.querySelector('.signup-done');
+  var ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function fail(text) { msg.textContent = text; input.setAttribute('aria-invalid', 'true'); form.classList.remove('busy'); input.focus(); }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = input.value.trim();
+    if (!ok.test(email)) return fail('That email looks incomplete. Check it and try again.');
+    msg.textContent = ''; input.removeAttribute('aria-invalid'); form.classList.add('busy');
+    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d && d.status === 'success') {
+          form.hidden = true; done.hidden = false; done.focus(); form.classList.remove('busy');
+        } else {
+          var m = d && d.errors && d.errors.messages && d.errors.messages.join(' ');
+          fail(m || 'Something went wrong. Try again in a moment.');
+        }
+      })
+      .catch(function () { fail('Could not reach the sign-up service. Check your connection and try again.'); });
+  });
+
+  box.querySelector('[data-retry]').addEventListener('click', function () {
+    done.hidden = true; form.hidden = false; input.value = ''; input.focus();
+  });
+
+  document.querySelectorAll('[data-jump]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      box.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+      if (!form.hidden) input.focus({ preventScroll: true });
+    });
+  });
+})();
+</script>
 </body>
 </html>

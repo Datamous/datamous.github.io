@@ -63,3 +63,67 @@ footer a{color:var(--muted)}
   nav a[href="#books"]{display:none}
   .book{flex-direction:column;align-items:flex-start}
 }
+
+/* Sign-up + download pages (/cheatsheet/, /cheatsheet/thanks/) */
+::selection{background:var(--accent);color:#fff}
+input,button{font:inherit;caret-color:var(--accent)}
+.lp-hero{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;padding:36px 0 72px}
+.lp-hero h1{font-size:clamp(38px,5vw,58px)}
+.lp-copy .lead{max-width:30em}
+.lp-art img{width:100%;height:auto;display:block}
+
+.signup{margin-top:30px;max-width:520px}
+.signup label{display:block;font-weight:700;font-size:16px;margin-bottom:10px}
+.signup-row{display:flex;gap:10px}
+.signup input{flex:1;min-width:0;height:56px;padding:0 18px;border:1.5px solid var(--line);border-radius:10px;background:var(--code);color:var(--ink);font-size:17px;transition:border-color .2s cubic-bezier(.16,1,.3,1),box-shadow .2s cubic-bezier(.16,1,.3,1)}
+.signup input::placeholder{color:var(--muted);opacity:.85}
+.signup input:hover{border-color:#b9b2a3}
+.signup input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent)}
+.signup input[aria-invalid=true]{border-color:#b3261e}
+.signup button[type=submit]{position:relative;height:56px;padding:0 24px;border:0;border-radius:10px;background:#B83A12;color:#fff;font-weight:700;font-size:17px;cursor:pointer;white-space:nowrap;box-shadow:0 6px 14px -6px rgba(20,20,20,.35);transition:background .2s,transform .2s cubic-bezier(.16,1,.3,1),box-shadow .2s}
+.signup button[type=submit]:hover{background:#9c300e;transform:translateY(-1px);box-shadow:0 10px 20px -8px rgba(20,20,20,.4)}
+.signup button[type=submit]:active{transform:translateY(0)}
+.signup button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.btn-busy{display:none;position:absolute;inset:0;margin:auto;width:22px;height:22px;border:2.5px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+.busy button[type=submit]{pointer-events:none}
+.busy .btn-label{visibility:hidden}
+.busy .btn-busy{display:block}
+@keyframes spin{to{transform:rotate(1turn)}}
+.signup-msg{min-height:0;margin:8px 0 0;color:#b3261e;font-size:15px;font-weight:600}
+.signup-msg:empty{display:none}
+.fine{font-size:14.5px;color:var(--muted);margin:12px 0 0;max-width:34em}
+.fine a{color:var(--muted)}
+.signup-done{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 26px;box-shadow:0 4px 10px -6px rgba(0,0,0,.14);animation:rise .5s cubic-bezier(.16,1,.3,1)}
+.signup-done:focus{outline:none}
+.signup-done h2{font-size:24px;margin:0 0 12px}
+.steps{margin:0;padding-left:22px}
+.steps li{margin:6px 0}
+.steps li::marker{color:var(--accent-strong);font-weight:800}
+.linklike{background:none;border:0;padding:0;color:var(--accent-strong);text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:inherit}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}}
+
+.facts{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px 28px;font-size:15px;color:var(--muted)}
+.facts li{display:flex;align-items:center;gap:6px}
+.facts b{color:var(--ink);font-weight:800}
+
+.cta-big{display:inline-flex;align-items:center;gap:12px;font-size:19px;padding:18px 30px;box-shadow:0 8px 18px -8px rgba(20,20,20,.4);transition:background .2s,transform .2s cubic-bezier(.16,1,.3,1)}
+.cta-big:hover{transform:translateY(-1px)}
+.next{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.next h2{font-size:26px;margin-bottom:14px}
+.next p{margin:0 0 14px;color:var(--muted)}
+.uses{margin:0;padding:0;list-style:none}
+.uses li{padding:12px 0;border-bottom:1px solid var(--line);color:var(--muted)}
+.uses li:first-child{padding-top:0}
+.uses strong,.next .ask strong{color:var(--ink)}
+.uses code{font:600 14px "JetBrains Mono",monospace;background:var(--code);border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:var(--ink)}
+.next .ask{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.signup-done{animation:none}.signup button[type=submit]:hover,.cta-big:hover{transform:none}}
+@media (max-width:760px){
+  .lp-hero{grid-template-columns:1fr;gap:20px;padding-top:8px}
+  .lp-art{order:-1;max-width:250px;margin:0 auto}
+  .signup-row{flex-direction:column}
+  .signup input{flex:none}
+  .signup button[type=submit]{width:100%}
+  .next{grid-template-columns:1fr;gap:32px}
+  .cta-big{display:flex;justify-content:center}
+}
