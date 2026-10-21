@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Get the free pandas Data Cleaning Cheat Sheet | Datamous</title>
-<meta name="description" content="78 tested pandas snippets for everyday data cleaning, in the order you'd use them, on two printable pages. Free by email.">
+<meta name="description" content="78 tested pandas snippets for everyday data cleaning, in the order you'd use them, on two printable pages. Free download.">
 <meta property="og:title" content="Free pandas Data Cleaning Cheat Sheet (2-page PDF)">
 <meta property="og:description" content="78 tested pandas snippets: blanks, duplicates, messy text, types, dates, outliers and merges.">
 <meta property="og:image" content="https://datamous.github.io/og.jpg">
@@ -32,24 +32,14 @@
 
     <div class="signup" id="signup">
       <form class="signup-form" action="https://app.kit.com/forms/10077352/subscriptions" method="post" novalidate>
-        <label for="email">Where should we send it?</label>
+        <label for="email">Enter your email to download</label>
         <div class="signup-row">
           <input id="email" name="email_address" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required aria-describedby="signup-msg">
-          <button type="submit"><span class="btn-label">Send me the cheat sheet</span><span class="btn-busy" aria-hidden="true"></span></button>
+          <button type="submit"><span class="btn-label">Download free</span><span class="btn-busy" aria-hidden="true"></span></button>
         </div>
         <p class="signup-msg" id="signup-msg" role="alert" aria-live="polite"></p>
-        <p class="fine">Free PDF by email. You'll also get short, practical emails about working with data. Unsubscribe in one click. <a href="/privacy/">Privacy</a></p>
+        <p class="fine">Instant download. You'll also get the occasional short email about working with data. Unsubscribe in one click. <a href="/privacy/">Privacy</a></p>
       </form>
-
-      <div class="signup-done" hidden tabindex="-1">
-        <h2>Check your inbox</h2>
-        <ol class="steps">
-          <li>Open the email from <strong>Datamous</strong>: <em>“One click to get your pandas cheat sheet”</em>.</li>
-          <li>Click the orange <strong>Confirm and get the cheat sheet</strong> button.</li>
-          <li>Your download page opens. That's it.</li>
-        </ol>
-        <p class="fine">Nothing after two minutes? Look in Promotions or Spam, or <button type="button" class="linklike" data-retry>try another email</button>.</p>
-      </div>
     </div>
 
     <ul class="facts" aria-label="What you get">
@@ -79,7 +69,7 @@
         <li>Check &amp; save</li>
       </ol>
       <p class="brandline">Plus a "pandas habits" box with the mistakes that silently change nothing, and a good order to clean in. Every line is run on the latest pandas before it's published.</p>
-      <a class="cta" href="#signup" data-jump>Send me the cheat sheet</a>
+      <a class="cta" href="#signup" data-jump>Get the free cheat sheet</a>
     </div>
     <figure class="snip">
       <img src="/snippet-missing-values.webp" alt="The Missing values section of the cheat sheet, showing pandas code for each fix" width="780" height="665" loading="lazy">
@@ -101,7 +91,6 @@
   var form = box.querySelector('form');
   var input = form.querySelector('input');
   var msg = form.querySelector('.signup-msg');
-  var done = box.querySelector('.signup-done');
   var ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   function fail(text) { msg.textContent = text; input.setAttribute('aria-invalid', 'true'); form.classList.remove('busy'); input.focus(); }
@@ -115,7 +104,7 @@
       .then(function (r) { return r.json(); })
       .then(function (d) {
         if (d && d.status === 'success') {
-          form.hidden = true; done.hidden = false; done.focus(); form.classList.remove('busy');
+          location.href = '/cheatsheet/thanks/?start=1';
         } else {
           var m = d && d.errors && d.errors.messages && d.errors.messages.join(' ');
           fail(m || 'Something went wrong. Try again in a moment.');
@@ -124,15 +113,11 @@
       .catch(function () { fail('Could not reach the sign-up service. Check your connection and try again.'); });
   });
 
-  box.querySelector('[data-retry]').addEventListener('click', function () {
-    done.hidden = true; form.hidden = false; input.value = ''; input.focus();
-  });
-
   document.querySelectorAll('[data-jump]').forEach(function (a) {
     a.addEventListener('click', function (e) {
       e.preventDefault();
       box.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
-      if (!form.hidden) input.focus({ preventScroll: true });
+      input.focus({ preventScroll: true });
     });
   });
 })();
