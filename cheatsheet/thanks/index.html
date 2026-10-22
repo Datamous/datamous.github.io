@@ -29,6 +29,18 @@
       Download the cheat sheet
     </a>
     <p class="fine">PDF · 2 US Letter pages · 105 KB. Prints fine on A4 too. Bookmark this page to download it again.</p>
+    <div class="review" id="review" hidden>
+      <img class="review-book" src="/book-master-data-cleaning.webp" alt="" width="600" height="960">
+      <div class="review-body">
+        <p class="review-kicker">Finished the book?</p>
+        <h2>Rate it on Amazon</h2>
+        <a class="stars" href="https://www.amazon.com/review/create-review?asin=B0HN5CDSS3" target="_blank" rel="noopener" aria-label="Rate Master Data Cleaning on Amazon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z"/></svg>
+        </a>
+        <p class="review-text">An honest rating takes under a minute and helps other beginners decide if the book is right for them.</p>
+        <a class="review-btn" href="https://www.amazon.com/review/create-review?asin=B0HN5CDSS3" target="_blank" rel="noopener">Leave a rating →</a>
+      </div>
+    </div>
   </div>
   <picture class="lp-art">
     <source media="(max-width:760px)" srcset="/cheatsheet/mockup-720.webp">
@@ -60,6 +72,9 @@
 </footer>
 </div>
 <script>
+// Show the review ask only once the download has started (auto or by click).
+function showReview() { setTimeout(function () { document.getElementById('review').hidden = false; }, 1200); }
+document.getElementById('dl').addEventListener('click', showReview);
 if (/[?&]start=1/.test(location.search)) {
   document.getElementById('dl').click();
   document.getElementById('started').hidden = false;
