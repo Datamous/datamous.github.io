@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get the free Chart Chooser Cheat Sheet | Datamous</title>
+<meta name="description" content="The right chart for every question, with one tested line of code for matplotlib, seaborn and plotly, plus a fix-this-chart checklist. Two printable pages. Free download.">
+<meta property="og:title" content="Free Chart Chooser Cheat Sheet (2-page PDF)">
+<meta property="og:description" content="Pick the right chart for your question, then draw it in one line with matplotlib, seaborn or plotly.">
+<meta property="og:image" content="https://datamous.github.io/chart-chooser/og.jpg">
+<meta property="og:url" content="https://datamous.github.io/chart-chooser/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://datamous.github.io/chart-chooser/">
+<link rel="icon" href="/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="lp">
+<div class="wrap">
+<header>
+  <a class="brand" href="/"><img src="/logo.png" alt="">DATAMOUS</a>
+  <nav><a href="/#books">Books</a></nav>
+</header>
+
+<main>
+<div class="lp-hero">
+  <div class="lp-copy">
+    <h1>The right chart for every question, on <span>two pages</span>.</h1>
+    <p class="lead">The free <strong>Chart Chooser Cheat Sheet</strong>: find your question, see the chart that answers it, and copy one tested line of code for matplotlib, seaborn or plotly. Then run the fix-this-chart checklist before you share.</p>
+
+    <div class="signup" id="signup">
+      <form class="signup-form" action="https://app.kit.com/forms/10077352/subscriptions" method="post" novalidate>
+        <label for="email">Enter your email to download</label>
+        <div class="signup-row">
+          <input id="email" name="email_address" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required aria-describedby="signup-msg">
+          <button type="submit"><span class="btn-label">Download free</span><span class="btn-busy" aria-hidden="true"></span></button>
+        </div>
+        <p class="signup-msg" id="signup-msg" role="alert" aria-live="polite"></p>
+        <p class="fine">Instant download. You'll also get the occasional short email about working with data. Unsubscribe in one click. <a href="/privacy/">Privacy</a></p>
+      </form>
+    </div>
+
+    <ul class="facts" aria-label="What you get">
+      <li><b>2</b> printable pages</li>
+      <li><b>9</b> chart questions</li>
+      <li><b>3</b> libraries, every line tested</li>
+    </ul>
+    <p class="reader">Came from the book? This is the bonus cheat sheet it mentions.</p>
+  </div>
+  <picture class="lp-art">
+    <source media="(max-width:760px)" srcset="mockup-720.webp">
+    <img src="mockup.webp" alt="The Chart Chooser cheat sheet, close up, with a FREE PDF tag" width="1400" height="1240" fetchpriority="high">
+  </picture>
+</div>
+
+<section>
+  <h2>What's inside</h2>
+  <p class="sub">Page 1: nine questions a chart can answer, each with one line of code per library. Page 2: the checklist.</p>
+  <div class="inside">
+    <div>
+      <ol class="toc">
+        <li>Which is biggest?</li><li>Change over time?</li>
+        <li>How many of each?</li><li>How spread out?</li>
+        <li>Two groupings?</li><li>Move together?</li>
+        <li>Spread by group?</li><li>Share of a whole?</li>
+        <li>What is a total made of?</li>
+      </ol>
+      <p class="brandline">Plus a fix-this-chart checklist (message, clutter, honesty, the reader), rules of thumb, 14 more charts for special questions, and how to save your chart. Every line of code is run before it's published.</p>
+      <a class="cta" href="#signup" data-jump>Get the free cheat sheet</a>
+    </div>
+    <figure class="snip">
+      <img src="/chart-chooser/snippet.webp" alt="The Which is biggest? section of the cheat sheet, with code for matplotlib, seaborn and plotly" width="1200" height="519" loading="lazy">
+      <figcaption>A real section, at actual size: Which is biggest?</figcaption>
+    </figure>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span>© 2026 Datamous</span>
+  <span><a href="/">Home</a> · <a href="https://x.com/datamous">X</a> · <a href="https://www.linkedin.com/company/109472739">LinkedIn</a> · <a href="/privacy/">Privacy</a></span>
+</footer>
+</div>
+
+<script>
+(function () {
+  var box = document.getElementById('signup');
+  var form = box.querySelector('form');
+  var input = form.querySelector('input');
+  var msg = form.querySelector('.signup-msg');
+  var ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function fail(text) { msg.textContent = text; input.setAttribute('aria-invalid', 'true'); form.classList.remove('busy'); input.focus(); }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = input.value.trim();
+    if (!ok.test(email)) return fail('That email looks incomplete. Check it and try again.');
+    msg.textContent = ''; input.removeAttribute('aria-invalid'); form.classList.add('busy');
+    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d && d.status === 'success') {
+          location.href = '/chart-chooser/thanks/?start=1';
+        } else {
+          var m = d && d.errors && d.errors.messages && d.errors.messages.join(' ');
+          fail(m || 'Something went wrong. Try again in a moment.');
+        }
+      })
+      .catch(function () { fail('Could not reach the sign-up service. Check your connection and try again.'); });
+  });
+
+  document.querySelectorAll('[data-jump]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      box.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+      input.focus({ preventScroll: true });
+    });
+  });
+})();
+</script>
+</body>
+</html>
