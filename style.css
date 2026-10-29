@@ -38,6 +38,7 @@ h2{font:800 32px/1.15 "Inter",sans-serif;letter-spacing:-.02em;margin:0 0 8px}
 .brandline{margin:28px 0 0;color:var(--muted)}
 
 .book{display:flex;gap:28px;align-items:center}
+.book+.book{margin-top:36px}
 .book img{width:150px;height:auto;border-radius:4px;box-shadow:0 10px 26px rgba(0,0,0,.18)}
 .book h3{margin:0 0 6px;font-size:21px}
 .book p{margin:0;color:var(--muted)}
