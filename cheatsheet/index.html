@@ -93,8 +93,9 @@
   var msg = form.querySelector('.signup-msg');
   var ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-  // Short addresses (/yt, /r) forward here with ?src=; each source has its own Kit form so we can see where sign-ups come from.
-  var forms = { yt: '10157954', r: '10157955' };
+  // Short address /r forwards here with ?src=r; it has its own Kit form so we can see where sign-ups come from.
+  // (/yt goes to the homepage since 8 Nov: the cheat sheet stays a gift for book readers.)
+  var forms = { r: '10157955' };
   var src = (location.search.match(/[?&]src=([a-z]+)/) || [])[1];
   if (forms[src]) form.action = 'https://app.kit.com/forms/' + forms[src] + '/subscriptions';
 
