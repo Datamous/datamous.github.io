@@ -93,6 +93,11 @@
   var msg = form.querySelector('.signup-msg');
   var ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
+  // Short addresses (/yt, /r) forward here with ?src=; each source has its own Kit form so we can see where sign-ups come from.
+  var forms = { yt: '10157954', r: '10157955' };
+  var src = (location.search.match(/[?&]src=([a-z]+)/) || [])[1];
+  if (forms[src]) form.action = 'https://app.kit.com/forms/' + forms[src] + '/subscriptions';
+
   function fail(text) { msg.textContent = text; input.setAttribute('aria-invalid', 'true'); form.classList.remove('busy'); input.focus(); }
 
   form.addEventListener('submit', function (e) {
