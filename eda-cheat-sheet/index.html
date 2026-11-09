@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get the free EDA &amp; Stats Cheat Sheet | Datamous</title>
+<meta name="description" content="Explore any dataset in four steps, pick the right statistical test, and run an A/B test, with tested Python code for every step. Three printable pages. Free download.">
+<meta property="og:title" content="Free EDA &amp; Stats Cheat Sheet (3-page PDF)">
+<meta property="og:description" content="The first hour with any dataset, which test to use, and A/B tests, with short, tested code in pandas, seaborn, SciPy and statsmodels.">
+<meta property="og:image" content="https://datamous.github.io/eda-cheat-sheet/og.jpg">
+<meta property="og:url" content="https://datamous.github.io/eda-cheat-sheet/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://datamous.github.io/eda-cheat-sheet/">
+<link rel="icon" href="/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="lp">
+<div class="wrap">
+<header>
+  <a class="brand" href="/"><img src="/logo.png" alt="">DATAMOUS</a>
+  <nav><a href="/#books">Books</a></nav>
+</header>
+
+<main>
+<div class="lp-hero">
+  <div class="lp-copy">
+    <h1>Explore any dataset and pick the right test, on <span>three pages</span>.</h1>
+    <p class="lead">The free <strong>EDA &amp; Stats Cheat Sheet</strong>: the first hour with any dataset in four steps, which statistical test answers which question, and an A/B test from start to finish, each with short, tested Python code.</p>
+
+    <div class="signup" id="signup">
+      <form class="signup-form" action="https://app.kit.com/forms/10157949/subscriptions" method="post" novalidate>
+        <label for="email">Enter your email to download</label>
+        <div class="signup-row">
+          <input id="email" name="email_address" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required aria-describedby="signup-msg">
+          <button type="submit"><span class="btn-label">Download free</span><span class="btn-busy" aria-hidden="true"></span></button>
+        </div>
+        <p class="signup-msg" id="signup-msg" role="alert" aria-live="polite"></p>
+        <p class="fine">Instant download. You'll also get the occasional short email about working with data. Unsubscribe in one click. <a href="/privacy/">Privacy</a></p>
+      </form>
+    </div>
+
+    <ul class="facts" aria-label="What you get">
+      <li><b>3</b> printable pages</li>
+      <li><b>16</b> tests and models</li>
+      <li>Every line of code <b>tested</b></li>
+    </ul>
+    <p class="reader">Came from the book? This is the bonus cheat sheet it mentions.</p>
+  </div>
+  <picture class="lp-art">
+    <source media="(max-width:760px)" srcset="mockup-720.webp">
+    <img src="mockup.webp" alt="The EDA and Stats cheat sheet, close up, with a FREE PDF tag" width="1400" height="1240" fetchpriority="high">
+  </picture>
+</div>
+
+<section>
+  <h2>What's inside</h2>
+  <p class="sub">Each row: the question, the code, and what the output tells you.</p>
+  <div class="inside">
+    <div>
+      <ol class="toc">
+        <li>Understand what you have</li><li>One column at a time</li>
+        <li>Two columns</li><li>Many columns and time</li>
+        <li>Which test?</li><li>A/B tests</li>
+      </ol>
+      <p class="brandline">From <code>df.info()</code> and histograms to t-tests, chi-square, regression and sample-size planning, plus how to read a p-value, a confidence interval and an effect size. Every line of code is run before it's published.</p>
+      <a class="cta" href="#signup" data-jump>Get the free cheat sheet</a>
+    </div>
+    <figure class="snip">
+      <img src="/eda-cheat-sheet/snippet.webp" alt="Step 1 of the cheat sheet, Understand what you have: questions, code and what to look for" width="1200" height="225" loading="lazy">
+      <figcaption>A real section, at actual size: Understand what you have.</figcaption>
+    </figure>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span>© 2026 Datamous</span>
+  <span><a href="/">Home</a> · <a href="https://x.com/datamous">X</a> · <a href="https://www.linkedin.com/company/109472739">LinkedIn</a> · <a href="/privacy/">Privacy</a></span>
+</footer>
+</div>
+
+<script>
+(function () {
+  var box = document.getElementById('signup');
+  var form = box.querySelector('form');
+  var input = form.querySelector('input');
+  var msg = form.querySelector('.signup-msg');
+  var ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function fail(text) { msg.textContent = text; input.setAttribute('aria-invalid', 'true'); form.classList.remove('busy'); input.focus(); }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = input.value.trim();
+    if (!ok.test(email)) return fail('That email looks incomplete. Check it and try again.');
+    msg.textContent = ''; input.removeAttribute('aria-invalid'); form.classList.add('busy');
+    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d && d.status === 'success') {
+          location.href = '/eda-cheat-sheet/thanks/?start=1';
+        } else {
+          var m = d && d.errors && d.errors.messages && d.errors.messages.join(' ');
+          fail(m || 'Something went wrong. Try again in a moment.');
+        }
+      })
+      .catch(function () { fail('Could not reach the sign-up service. Check your connection and try again.'); });
+  });
+
+  document.querySelectorAll('[data-jump]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      box.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+      input.focus({ preventScroll: true });
+    });
+  });
+})();
+</script>
+</body>
+</html>
