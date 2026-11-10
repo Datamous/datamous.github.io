@@ -70,7 +70,7 @@
     <div>
       <h3>Master Data Cleaning</h3>
       <p>A hands-on beginner's guide to cleaning messy data with Python, pandas and NumPy. Kindle and paperback.</p>
-      <a class="ghost" href="https://www.amazon.com/dp/B0HN5CDSS3">See it on Amazon</a>
+      <a class="ghost" href="https://www.amazon.com/dp/B0HN5CDSS3?maas=maas_adg_81C654DCCEDA40E74AF94AB16E621A9E_afap_abs&amp;ref_=aa_maas&amp;tag=maas" data-yt="https://www.amazon.com/dp/B0HN5CDSS3?maas=maas_adg_ECB3EA7D3ABC00ABFB589E8FEC163925_afap_abs&amp;ref_=aa_maas&amp;tag=maas">See it on Amazon</a>
     </div>
   </div>
   <div class="book">
@@ -78,7 +78,7 @@
     <div>
       <h3>Master Data Visualization</h3>
       <p>A hands-on beginner's guide to clear, honest charts with Python, matplotlib, seaborn and plotly. Kindle and paperback.</p>
-      <a class="ghost" href="https://www.amazon.com/dp/B0HQDNZMVN">See it on Amazon</a>
+      <a class="ghost" href="https://www.amazon.com/dp/B0HQDNZMVN?maas=maas_adg_25ECB19E692BA4B19F0B2816D83ABCD2_afap_abs&amp;ref_=aa_maas&amp;tag=maas" data-yt="https://www.amazon.com/dp/B0HQDNZMVN?maas=maas_adg_22DFD3DA3303F20F6828F38E1AE95EA0_afap_abs&amp;ref_=aa_maas&amp;tag=maas">See it on Amazon</a>
     </div>
   </div>
 </section>
@@ -89,5 +89,9 @@
   <span><a href="/cheatsheet/">Free cheat sheet</a> · <a href="https://x.com/datamous">X</a> · <a href="https://www.linkedin.com/company/109472739">LinkedIn</a> · <a href="https://github.com/Datamous">GitHub</a> · <a href="/privacy/">Privacy</a></span>
 </footer>
 </div>
+<script>/* Amazon Attribution: visitors who came from YouTube (/yt) get the YouTube tracking links */
+if (new URLSearchParams(location.search).get('src') === 'yt') {
+  document.querySelectorAll('a[data-yt]').forEach(a => { a.href = a.dataset.yt; });
+}</script>
 </body>
 </html>
